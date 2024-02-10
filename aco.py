@@ -4,6 +4,31 @@ import time
 
 
 class UNO_OPTIMO:
+    """
+    A class to model and solve the vehicle routing problem with an Ant Colony Optimization (ACO) approach.
+
+    Attributes:
+        num_ants (int): The number of ants (solutions) to generate per iteration.
+        num_iterations (int): The number of iterations to perform the optimization.
+        decay (float): The rate at which pheromone trails decay.
+        alpha (float): The exponent on the pheromone trail influence (default=1).
+        beta (float): The exponent on the heuristic information (default=1).
+        shipment_data (list): A list of dictionaries, each representing a shipment with its properties.
+        vehicle_data (list): A list of dictionaries, each representing a vehicle with its properties.
+        best_solution (list): The best solution found during the optimization process.
+        best_vehicles_used (int): The number of vehicles used in the best solution.
+        skipped_shipments (list): Shipments that could not be placed in any vehicle in the best solution.
+        best_evaluation (tuple): A tuple containing the evaluation metrics of the best solution.
+
+    Methods:
+        initialize_pheromones(num_vehicles): Initializes the pheromone matrix for the given number of vehicles.
+        place_shipment(shipment, vehicle_loads, pheromones): Attempts to place a shipment in the best vehicle based on pheromones and heuristic.
+        evaluate_solution(vehicle_loads): Evaluates a solution based on the number of vehicles used and total remaining capacity.
+        construct_solution(pheromones): Constructs a solution (vehicle loads) based on current pheromones.
+        solve(): Runs the ACO algorithm to find the best solution for the vehicle routing problem.
+        print_solution(): Prints the details of the best solution found.
+    """
+
     def __init__(self, num_ants, num_iterations, decay, alpha=1, beta=1, shipment_data=None, vehicle_data=None):
         self.num_ants = num_ants
         self.num_iterations = num_iterations

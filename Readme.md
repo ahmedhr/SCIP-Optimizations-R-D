@@ -21,10 +21,9 @@ UNO OPTIMO is a sophisticated vehicle routing optimization tool designed to effi
 ## Installation
 
 To get started with UNO OPTIMO, clone this repository to your local machine:
-
-``` git clone https://github.com/your-username/uno-optimo.git
-cd uno-optimo ```
-
+```
+git clone https://github.com/your-username/uno-optimo.git && cd uno-optimo
+```
 Ensure you have Python 3.6 or later installed on your system. No additional dependencies are required to run the tool.
 
 ## Usage
@@ -65,8 +64,8 @@ optimizer = UNO_OPTIMO(
 optimizer.solve()
 
 # Print the best solution found
-optimizer.print_solution()```
-
+optimizer.print_solution()
+```
 ## Contributing
 
 Contributions to UNO OPTIMO are welcome! Whether it's bug reports, feature requests, or code contributions, please feel free to reach out or submit a pull request.

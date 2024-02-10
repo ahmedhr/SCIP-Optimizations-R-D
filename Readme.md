@@ -11,12 +11,12 @@ UNO OPTIMO is a sophisticated vehicle routing optimization tool designed to effi
 
 ## Features
 
-- **Ant Colony Optimization: Leverages the ACO algorithm to find the most efficient routing solutions.
-- **Customizable Parameters: Allows adjustment of key parameters such as the number of ants, iterations, pheromone decay rate, and heuristic influence to fine-tune the optimization process.
-- **Heuristic Evaluation: Incorporates heuristic information to guide the search process towards more promising solutions.
-- **Dynamic Shipment Placement: Employs a probabilistic approach for shipment placement, considering both pheromone trails and heuristic information.
-- **Solution Evaluation: Evaluates solutions based on the number of vehicles used and the total remaining capacity, aiming for optimal resource utilization.
-- **Scalability: Designed to handle varying sizes of shipment and vehicle data, making it suitable for both small and large-scale operations.
+- **Ant Colony Optimization: Leverages the ACO algorithm to find the most efficient routing solutions.**
+- **Customizable Parameters: Allows adjustment of key parameters such as the number of ants, iterations, pheromone decay rate, and heuristic influence to fine-tune the optimization process.**
+- **Heuristic Evaluation: Incorporates heuristic information to guide the search process towards more promising solutions.**
+- **Dynamic Shipment Placement: Employs a probabilistic approach for shipment placement, considering both pheromone trails and heuristic information.**
+- **Solution Evaluation: Evaluates solutions based on the number of vehicles used and the total remaining capacity, aiming for optimal resource utilization.**
+- **Scalability: Designed to handle varying sizes of shipment and vehicle data, making it suitable for both small and large-scale operations.**
 
 ## Installation
 

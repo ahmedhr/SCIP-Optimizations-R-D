@@ -1,4 +1,3 @@
-import math
 import random
 import time
 
@@ -66,8 +65,7 @@ class UNO_OPTIMO:
             return False
 
         probabilities = [p / total for p in probabilities]
-        chosen_vehicle_index = random.choices(
-            range(len(vehicle_loads)), weights=probabilities, k=1)[0]
+        chosen_vehicle_index = random.choices(range(len(vehicle_loads)), weights=probabilities, k=1)[0]
         vehicle_loads[chosen_vehicle_index]['shipments'].append(shipment)
         return True
 
@@ -154,35 +152,50 @@ class UNO_OPTIMO:
             print("----")
 
 
-# # Example usage
-
-# shipment_data = [
-#     {"awb": 1, "capacity": 500},
-#     {"awb": 2, "capacity": 300},
-#     {"awb": 3, "capacity": 200},
-#     {"awb": 4, "capacity": 100},
-#     {"awb": 5, "capacity": 600}
-# ]
-# vehicle_data = [
-#     {"id": 1, "capacity": 500},
-#     {"id": 2, "capacity": 600},
-#     {"id": 3, "capacity": 550},
-#     {"id": 4, "capacity": 800}
 # ]
 
+shipment_data = [{'awb': 1, 'capacity': 62}, {'awb': 2, 'capacity': 25}, {'awb': 3, 'capacity': 89},
+                 {'awb': 4, 'capacity': 5}, {'awb': 5, 'capacity': 33}, {'awb': 6, 'capacity': 60},
+                 {'awb': 7, 'capacity': 50}, {'awb': 8, 'capacity': 6}, {'awb': 9, 'capacity': 3},
+                 {'awb': 10, 'capacity': 9}, {'awb': 11, 'capacity': 71}, {'awb': 12, 'capacity': 71},
+                 {'awb': 13, 'capacity': 68}, {'awb': 14, 'capacity': 5}, {'awb': 15, 'capacity': 54},
+                 {'awb': 16, 'capacity': 97}, {'awb': 17, 'capacity': 60}, {'awb': 18, 'capacity': 43},
+                 {'awb': 19, 'capacity': 87}, {'awb': 20, 'capacity': 39}, {'awb': 21, 'capacity': 24},
+                 {'awb': 22, 'capacity': 88}, {'awb': 23, 'capacity': 60}, {'awb': 24, 'capacity': 33},
+                 {'awb': 25, 'capacity': 96}, {'awb': 26, 'capacity': 71}, {'awb': 27, 'capacity': 4},
+                 {'awb': 28, 'capacity': 71}, {'awb': 29, 'capacity': 72}, {'awb': 30, 'capacity': 8},
+                 {'awb': 31, 'capacity': 99}, {'awb': 32, 'capacity': 78}, {'awb': 33, 'capacity': 99},
+                 {'awb': 34, 'capacity': 87}, {'awb': 35, 'capacity': 83}, {'awb': 36, 'capacity': 29},
+                 {'awb': 37, 'capacity': 44}, {'awb': 38, 'capacity': 51}, {'awb': 39, 'capacity': 96},
+                 {'awb': 40, 'capacity': 7}, {'awb': 41, 'capacity': 56}, {'awb': 42, 'capacity': 30},
+                 {'awb': 43, 'capacity': 75}, {'awb': 44, 'capacity': 89}, {'awb': 45, 'capacity': 13},
+                 {'awb': 46, 'capacity': 10}, {'awb': 47, 'capacity': 61}, {'awb': 48, 'capacity': 74},
+                 {'awb': 49, 'capacity': 51}, {'awb': 50, 'capacity': 45}, {'awb': 51, 'capacity': 91},
+                 {'awb': 52, 'capacity': 34}, {'awb': 53, 'capacity': 49}, {'awb': 54, 'capacity': 75},
+                 {'awb': 55, 'capacity': 61}, {'awb': 56, 'capacity': 83}, {'awb': 57, 'capacity': 24},
+                 {'awb': 58, 'capacity': 42}, {'awb': 59, 'capacity': 82}, {'awb': 60, 'capacity': 76},
+                 {'awb': 61, 'capacity': 42}, {'awb': 62, 'capacity': 89}, {'awb': 63, 'capacity': 12},
+                 {'awb': 64, 'capacity': 33}, {'awb': 65, 'capacity': 13}, {'awb': 66, 'capacity': 63},
+                 {'awb': 67, 'capacity': 72}, {'awb': 68, 'capacity': 76}, {'awb': 69, 'capacity': 95},
+                 {'awb': 70, 'capacity': 11}, {'awb': 71, 'capacity': 34}, {'awb': 72, 'capacity': 41},
+                 {'awb': 73, 'capacity': 42}, {'awb': 74, 'capacity': 5}, {'awb': 75, 'capacity': 62},
+                 {'awb': 76, 'capacity': 66}, {'awb': 77, 'capacity': 5}, {'awb': 78, 'capacity': 75},
+                 {'awb': 79, 'capacity': 7}, {'awb': 80, 'capacity': 45}, {'awb': 81, 'capacity': 4},
+                 {'awb': 82, 'capacity': 30}, {'awb': 83, 'capacity': 75}, {'awb': 84, 'capacity': 27},
+                 {'awb': 85, 'capacity': 98}, {'awb': 86, 'capacity': 33}, {'awb': 87, 'capacity': 37},
+                 {'awb': 88, 'capacity': 92}, {'awb': 89, 'capacity': 58}, {'awb': 90, 'capacity': 6},
+                 {'awb': 91, 'capacity': 36}, {'awb': 92, 'capacity': 90}, {'awb': 93, 'capacity': 55},
+                 {'awb': 94, 'capacity': 30}, {'awb': 95, 'capacity': 36}, {'awb': 96, 'capacity': 19},
+                 {'awb': 97, 'capacity': 16}, {'awb': 98, 'capacity': 55}, {'awb': 99, 'capacity': 71},
+                 {'awb': 100, 'capacity': 85}]
 
-# shipment_data = [
-#     {"awb": i + 1, "capacity": math.floor(random.random() * 100)} for i in range(0, 100)
-# ]
-#
-# vehicle_data = [
-#     {"id": i + 1, "capacity": random.randint(100, 1000)} for i in range(0, 20)
-# ]
-
-shipment_data = [{'awb': 1, 'capacity': 62}, {'awb': 2, 'capacity': 25}, {'awb': 3, 'capacity': 89}, {'awb': 4, 'capacity': 5}, {'awb': 5, 'capacity': 33}, {'awb': 6, 'capacity': 60}, {'awb': 7, 'capacity': 50}, {'awb': 8, 'capacity': 6}, {'awb': 9, 'capacity': 3}, {'awb': 10, 'capacity': 9}, {'awb': 11, 'capacity': 71}, {'awb': 12, 'capacity': 71}, {'awb': 13, 'capacity': 68}, {'awb': 14, 'capacity': 5}, {'awb': 15, 'capacity': 54}, {'awb': 16, 'capacity': 97}, {'awb': 17, 'capacity': 60}, {'awb': 18, 'capacity': 43}, {'awb': 19, 'capacity': 87}, {'awb': 20, 'capacity': 39}, {'awb': 21, 'capacity': 24}, {'awb': 22, 'capacity': 88}, {'awb': 23, 'capacity': 60}, {'awb': 24, 'capacity': 33}, {'awb': 25, 'capacity': 96}, {'awb': 26, 'capacity': 71}, {'awb': 27, 'capacity': 4}, {'awb': 28, 'capacity': 71}, {'awb': 29, 'capacity': 72}, {'awb': 30, 'capacity': 8}, {'awb': 31, 'capacity': 99}, {'awb': 32, 'capacity': 78}, {'awb': 33, 'capacity': 99}, {'awb': 34, 'capacity': 87}, {'awb': 35, 'capacity': 83}, {'awb': 36, 'capacity': 29}, {'awb': 37, 'capacity': 44}, {'awb': 38, 'capacity': 51}, {'awb': 39, 'capacity': 96}, {'awb': 40, 'capacity': 7}, {'awb': 41, 'capacity': 56}, {'awb': 42, 'capacity': 30}, {'awb': 43, 'capacity': 75}, {'awb': 44, 'capacity': 89}, {'awb': 45, 'capacity': 13}, {'awb': 46, 'capacity': 10}, {'awb': 47, 'capacity': 61}, {'awb': 48, 'capacity': 74}, {'awb': 49, 'capacity': 51}, {'awb': 50, 'capacity': 45}, {'awb': 51, 'capacity': 91}, {'awb': 52, 'capacity': 34}, {'awb': 53, 'capacity': 49}, {'awb': 54, 'capacity': 75}, {'awb': 55, 'capacity': 61}, {'awb': 56, 'capacity': 83}, {'awb': 57, 'capacity': 24}, {'awb': 58, 'capacity': 42}, {'awb': 59, 'capacity': 82}, {'awb': 60, 'capacity': 76}, {'awb': 61, 'capacity': 42}, {'awb': 62, 'capacity': 89}, {'awb': 63, 'capacity': 12}, {'awb': 64, 'capacity': 33}, {'awb': 65, 'capacity': 13}, {'awb': 66, 'capacity': 63}, {'awb': 67, 'capacity': 72}, {'awb': 68, 'capacity': 76}, {'awb': 69, 'capacity': 95}, {'awb': 70, 'capacity': 11}, {'awb': 71, 'capacity': 34}, {'awb': 72, 'capacity': 41}, {'awb': 73, 'capacity': 42}, {'awb': 74, 'capacity': 5}, {'awb': 75, 'capacity': 62}, {'awb': 76, 'capacity': 66}, {'awb': 77, 'capacity': 5}, {'awb': 78, 'capacity': 75}, {'awb': 79, 'capacity': 7}, {'awb': 80, 'capacity': 45}, {'awb': 81, 'capacity': 4}, {'awb': 82, 'capacity': 30}, {'awb': 83, 'capacity': 75}, {'awb': 84, 'capacity': 27}, {'awb': 85, 'capacity': 98}, {'awb': 86, 'capacity': 33}, {'awb': 87, 'capacity': 37}, {'awb': 88, 'capacity': 92}, {'awb': 89, 'capacity': 58}, {'awb': 90, 'capacity': 6}, {'awb': 91, 'capacity': 36}, {'awb': 92, 'capacity': 90}, {'awb': 93, 'capacity': 55}, {'awb': 94, 'capacity': 30}, {'awb': 95, 'capacity': 36}, {'awb': 96, 'capacity': 19}, {'awb': 97, 'capacity': 16}, {'awb': 98, 'capacity': 55}, {'awb': 99, 'capacity': 71}, {'awb': 100, 'capacity': 85}]
-
-vehicle_data = [{'id': 1, 'capacity': 549}, {'id': 2, 'capacity': 573}, {'id': 3, 'capacity': 433}, {'id': 4, 'capacity': 394}, {'id': 5, 'capacity': 640}, {'id': 6, 'capacity': 604}, {'id': 7, 'capacity': 769}, {'id': 8, 'capacity': 240}, {'id': 9, 'capacity': 237}, {'id': 10, 'capacity': 524}, {'id': 11, 'capacity': 332}, {'id': 12, 'capacity': 585}, {'id': 13, 'capacity': 486}, {'id': 14, 'capacity': 883}, {'id': 15, 'capacity': 170}, {'id': 16, 'capacity': 234}, {'id': 17, 'capacity': 194}, {'id': 18, 'capacity': 658}, {'id': 19, 'capacity': 364}, {'id': 20, 'capacity': 414}]
-
+vehicle_data = [{'id': 1, 'capacity': 5400}, {'id': 2, 'capacity': 573}, {'id': 3, 'capacity': 433},
+                {'id': 4, 'capacity': 394}, {'id': 5, 'capacity': 640}, {'id': 6, 'capacity': 604},
+                {'id': 7, 'capacity': 769}, {'id': 8, 'capacity': 240}, {'id': 9, 'capacity': 237},
+                {'id': 10, 'capacity': 524}, {'id': 11, 'capacity': 332}, {'id': 12, 'capacity': 585},
+                {'id': 13, 'capacity': 486}, {'id': 14, 'capacity': 883}, {'id': 15, 'capacity': 170},
+                {'id': 16, 'capacity': 234}, {'id': 17, 'capacity': 194}, {'id': 18, 'capacity': 658},
+                {'id': 19, 'capacity': 364}, {'id': 20, 'capacity': 414}]
 
 # print(shipment_data)
 # print(vehicle_data)
